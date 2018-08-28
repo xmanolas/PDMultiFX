@@ -1,5 +1,5 @@
 
-# DELAY BASED FX in PD 
+DELAY BASED FX in PD 
 
 
 The patches can be called by any other PD patch, as normal.

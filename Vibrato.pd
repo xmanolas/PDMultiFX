@@ -1,0 +1,100 @@
+#N canvas 0 35 1011 697 12;
+#X obj 40 233 *~;
+#X obj 258 209 snapshot~;
+#X obj 257 161 osc~;
+#X obj 313 152 loadbang;
+#X obj 401 101 cnv 15 300 250 empty empty Vibrato 10 18 0 14 -66577
+-24198 0;
+#X obj 625 165 vsl 15 128 0 1 0 0 empty empty Volume -12 140 0 8 -62784
+-24198 -24198 10200 1;
+#X obj 447 165 vsl 15 128 0 20 0 0 empty empty Mod_Frequency -34 140
+0 8 -62784 -24198 -24198 6000 1;
+#X obj 537 165 vsl 15 128 0 1 0 0 empty empty Depth -9 140 0 8 -62784
+-24198 -24198 6900 1;
+#X obj 40 36 inlet~;
+#X obj 40 359 outlet~;
+#X obj 257 117 r ModFreqvib;
+#X obj 277 261 r Depthvib;
+#X obj 517 373 s ModFreqvib;
+#X obj 633 373 s Depthvib;
+#X obj 727 373 s Volvib;
+#X obj 64 207 r Volvib;
+#X obj 413 135 tgl 15 0 empty empty On/Off 18 8 0 8 -62784 -24198 -24198
+0 1;
+#X obj 421 59 s switchVib;
+#X msg 172 443 1;
+#X msg 216 444 0;
+#X obj 172 414 select 0;
+#X obj 172 377 r switchVib;
+#X obj 82 68 s~ DrySignalVib;
+#X obj 39 433 r~ DrySignalVib;
+#X obj 38 464 *~ 1;
+#X obj 39 291 *~ 0;
+#X obj 416 326 tgl 15 0 empty empty Dry_Out 18 8 0 8 -62784 -24198
+-24198 0 1;
+#X obj 577 44 loadbang;
+#X msg 577 71 1;
+#X obj 399 372 s SerialConV;
+#X obj 38 508 *~ 1;
+#X obj 81 483 r SerialConV;
+#X obj 467 226 nbx 4 14 0 100 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 9.44882 256;
+#X obj 558 226 nbx 4 14 0 100 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 54.3307 256;
+#X obj 710 226 * 100;
+#X obj 646 226 nbx 4 14 0 100 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 80.315 256;
+#X obj 312 179 metro 1;
+#X obj 66 260 r switchVib;
+#X obj 38 540 s~ VibFXSignal;
+#X obj 66 319 r~ VibFXSignal;
+#X obj 258 316 s VibLFO;
+#X obj 40 141 r VibLFO;
+#X obj 40 174 delread~ delvib1 1;
+#X obj 719 261 * 100;
+#X obj 258 285 * 1;
+#X obj 40 93 delwrite~ delvib1 1000;
+#X obj 259 236 + 10;
+#X obj 328 351 loadbang;
+#X msg 328 382 0;
+#X connect 0 0 25 0;
+#X connect 1 0 46 0;
+#X connect 2 0 1 0;
+#X connect 3 0 36 0;
+#X connect 5 0 14 0;
+#X connect 5 0 34 0;
+#X connect 6 0 12 0;
+#X connect 6 0 32 0;
+#X connect 7 0 13 0;
+#X connect 7 0 43 0;
+#X connect 8 0 22 0;
+#X connect 8 0 45 0;
+#X connect 10 0 2 0;
+#X connect 11 0 44 1;
+#X connect 15 0 0 1;
+#X connect 16 0 17 0;
+#X connect 18 0 24 1;
+#X connect 19 0 24 1;
+#X connect 20 0 18 0;
+#X connect 20 1 19 0;
+#X connect 21 0 20 0;
+#X connect 23 0 24 0;
+#X connect 24 0 30 0;
+#X connect 25 0 9 0;
+#X connect 26 0 29 0;
+#X connect 27 0 28 0;
+#X connect 28 0 26 0;
+#X connect 30 0 38 0;
+#X connect 31 0 30 1;
+#X connect 34 0 35 0;
+#X connect 36 0 1 0;
+#X connect 37 0 25 1;
+#X connect 39 0 9 0;
+#X connect 41 0 42 0;
+#X connect 42 0 0 0;
+#X connect 43 0 33 0;
+#X connect 44 0 40 0;
+#X connect 46 0 44 0;
+#X connect 47 0 48 0;
+#X connect 48 0 26 0;
+#X coords 0 -1 1 1 300 250 1 400 100;

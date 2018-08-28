@@ -1,0 +1,218 @@
+#N canvas 0 0 1011 677 12;
+#X obj 653 883 * -1;
+#X obj 382 876 delwrite~ delAP1 5000;
+#X obj 381 929 delread~ delAP1 1;
+#X obj 382 999 +~;
+#X obj 634 911 *~;
+#X obj 235 919 *~;
+#X obj 383 831 +~;
+#X obj 236 864 r AP1Gain;
+#X obj 653 854 r AP1Gain;
+#X obj 642 1097 * -1;
+#X obj 382 1237 +~;
+#X obj 623 1127 *~;
+#X obj 220 1123 *~;
+#X obj 382 1040 +~;
+#X obj 642 1068 r AP2Gain;
+#X obj 226 1075 r AP2Gain;
+#X obj 381 1096 delwrite~ delAP2 5000;
+#X obj 381 1155 delread~ delAP1 2;
+#X obj 15 616 +~;
+#X obj 33 583 *~;
+#X obj 33 509 delread~ Comb1Del 1;
+#X obj 52 555 r Comb1Feedback;
+#X obj 33 476 r Comb1DelTime;
+#X obj 23 649 delwrite~ Comb1Del 1000;
+#X obj 390 431 inlet~;
+#X obj 214 616 +~;
+#X obj 232 583 *~;
+#X obj 411 616 +~;
+#X obj 429 583 *~;
+#X obj 606 615 +~;
+#X obj 624 582 *~;
+#X obj 286 739 +~;
+#X obj 383 794 +~;
+#X obj 385 766 +~;
+#X obj 381 1330 outlet~;
+#X obj 232 475 r Comb2DelTime;
+#X obj 232 509 delread~ Comb2Del 1;
+#X obj 251 555 r Comb2Feedback;
+#X obj 222 649 delwrite~ Comb2Del 1000;
+#X obj 429 476 r Comb3DelTime;
+#X obj 429 509 delread~ Comb3Del 1;
+#X obj 448 555 r Comb3Feedback;
+#X obj 419 649 delwrite~ Comb3Del 1000;
+#X obj 624 475 r Comb4DelTime;
+#X obj 624 508 delread~ Comb4Del 1;
+#X obj 643 554 r Comb4Feedback;
+#X obj 614 648 delwrite~ Comb4Del 1000;
+#X obj 101 11 cnv 15 650 340 empty empty Schroeder_Reverb 20 12 0 14
+-66577 -24198 0;
+#X obj 549 62 cnv 15 180 250 empty empty All_Pass 20 12 0 10 -128992
+-24198 0;
+#X obj 621 388 s AP1Gain;
+#X obj 724 388 s AP2Gain;
+#X obj 582 136 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 0 1;
+#X obj 655 136 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 0 1;
+#X obj 573 96 nbx 5 14 0 5000 0 0 empty empty Delay_Time -13 23 0 8
+-62784 -24198 -24198 0 256;
+#X obj 650 96 nbx 5 14 0 5000 0 0 empty empty Delay_Time -13 23 0 8
+-62784 -24198 -24198 0 256;
+#X obj 619 361 s AP1DelTime;
+#X obj 724 361 s AP2DelTime;
+#X obj 676 194 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0 256;
+#X obj 602 194 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0 256;
+#X obj 134 62 cnv 15 400 250 empty empty Comb_Filters 20 12 0 10 -128992
+-24198 0;
+#X obj 171 95 nbx 5 14 0 50 0 0 empty empty Delay_Time -13 23 0 8 -62784
+-24198 -24198 50 256;
+#X obj 83 361 s Comb1DelTime;
+#X obj 182 139 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 2300 1;
+#X obj 203 198 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0.181102 256;
+#X obj 77 388 s Comb1Feedback;
+#X obj 261 94 nbx 5 14 0 50 0 0 empty empty Delay_Time -13 23 0 8 -62784
+-24198 -24198 17 256;
+#X obj 272 138 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 6700 1;
+#X obj 293 198 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0.527559 256;
+#X obj 351 94 nbx 5 14 0 50 0 0 empty empty Delay_Time -13 23 0 8 -62784
+-24198 -24198 38 256;
+#X obj 362 138 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 4900 1;
+#X obj 383 197 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0.385827 256;
+#X obj 441 93 nbx 5 14 0 50 0 0 empty empty Delay_Time -13 23 0 8 -62784
+-24198 -24198 0 256;
+#X obj 452 137 vsl 15 128 0 1 0 0 empty empty Feedback -18 140 0 8
+-62784 -24198 -24198 7900 1;
+#X obj 472 197 nbx 4 14 0 1 0 0 empty empty empty -25 23 0 8 -62784
+-24198 -24198 0.622047 256;
+#X obj 216 362 s Comb2DelTime;
+#X obj 210 389 s Comb2Feedback;
+#X obj 350 361 s Comb3DelTime;
+#X obj 344 388 s Comb3Feedback;
+#X obj 483 362 s Comb4DelTime;
+#X obj 482 389 s Comb4Feedback;
+#X obj 381 902 r AP1Gain;
+#X obj 382 1125 r AP2Gain;
+#X obj 14 700 *~ 0.25;
+#X obj 213 690 *~ 0.25;
+#X obj 411 700 *~ 0.25;
+#X obj 607 695 *~ 0.25;
+#X obj 114 39 tgl 15 0 empty empty On/Off 18 8 0 8 -62784 -24198 -24198
+0 1;
+#X msg 640 1244 1;
+#X msg 682 1244 0;
+#X obj 640 1215 select 0;
+#X obj 501 1264 *~ 1;
+#X obj 501 1235 r~ DrySignalSR;
+#X obj 381 1268 *~ 0;
+#X obj 481 451 s~ DrySignalSR;
+#X obj 115 325 tgl 15 0 empty empty Dry_Out 18 8 0 8 -62784 -24198
+-24198 0 1;
+#X obj 5 120 s ByPassSR;
+#X obj 639 1182 r ByPassSR;
+#X obj 502 1295 *~ 1;
+#X obj 545 1270 r SerialConSR;
+#X obj -5 413 s SerialConSR;
+#X obj 26 268 loadbang;
+#X msg 26 295 0;
+#X connect 0 0 4 1;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 0 13 0;
+#X connect 3 0 11 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 1;
+#X connect 6 0 1 0;
+#X connect 7 0 5 1;
+#X connect 8 0 0 0;
+#X connect 9 0 11 1;
+#X connect 10 0 12 0;
+#X connect 10 0 92 0;
+#X connect 11 0 10 1;
+#X connect 12 0 13 1;
+#X connect 13 0 16 0;
+#X connect 14 0 9 0;
+#X connect 15 0 12 1;
+#X connect 17 0 10 0;
+#X connect 18 0 23 0;
+#X connect 18 0 82 0;
+#X connect 19 0 18 1;
+#X connect 20 0 19 0;
+#X connect 21 0 19 1;
+#X connect 22 0 20 0;
+#X connect 24 0 18 0;
+#X connect 24 0 25 0;
+#X connect 24 0 27 0;
+#X connect 24 0 29 0;
+#X connect 24 0 93 0;
+#X connect 25 0 38 0;
+#X connect 25 0 83 0;
+#X connect 26 0 25 1;
+#X connect 27 0 42 0;
+#X connect 27 0 84 0;
+#X connect 28 0 27 1;
+#X connect 29 0 46 0;
+#X connect 29 0 85 0;
+#X connect 30 0 29 1;
+#X connect 31 0 33 0;
+#X connect 32 0 6 0;
+#X connect 32 0 4 0;
+#X connect 33 0 32 0;
+#X connect 35 0 36 0;
+#X connect 36 0 26 0;
+#X connect 37 0 26 1;
+#X connect 39 0 40 0;
+#X connect 40 0 28 0;
+#X connect 41 0 28 1;
+#X connect 43 0 44 0;
+#X connect 44 0 30 0;
+#X connect 45 0 30 1;
+#X connect 51 0 49 0;
+#X connect 51 0 58 0;
+#X connect 52 0 50 0;
+#X connect 52 0 57 0;
+#X connect 53 0 55 0;
+#X connect 54 0 56 0;
+#X connect 60 0 61 0;
+#X connect 62 0 63 0;
+#X connect 62 0 64 0;
+#X connect 65 0 74 0;
+#X connect 66 0 67 0;
+#X connect 66 0 75 0;
+#X connect 68 0 76 0;
+#X connect 69 0 70 0;
+#X connect 69 0 77 0;
+#X connect 71 0 78 0;
+#X connect 72 0 73 0;
+#X connect 72 0 79 0;
+#X connect 80 0 2 0;
+#X connect 81 0 17 0;
+#X connect 82 0 31 0;
+#X connect 83 0 31 1;
+#X connect 84 0 33 1;
+#X connect 85 0 32 1;
+#X connect 86 0 95 0;
+#X connect 87 0 90 1;
+#X connect 88 0 90 1;
+#X connect 89 0 87 0;
+#X connect 89 1 88 0;
+#X connect 90 0 97 0;
+#X connect 91 0 90 0;
+#X connect 92 0 34 0;
+#X connect 94 0 99 0;
+#X connect 96 0 89 0;
+#X connect 96 0 92 1;
+#X connect 97 0 34 0;
+#X connect 98 0 97 1;
+#X connect 100 0 101 0;
+#X connect 101 0 94 0;
+#X coords 0 -1 1 1 650 340 1 100 10;
